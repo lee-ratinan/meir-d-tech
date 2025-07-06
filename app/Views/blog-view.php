@@ -2,7 +2,7 @@
 $this->extend('_layout.php');
 $this->section('content');
 ?>
-    <section id="about" class="about section" style="margin-top:100px !important;">
+    <section id="blog" class="blog section" style="margin-top:100px !important;">
         <div class="container">
             <div class="row">
                 <div class="col col-md-10 col-lg-8">
