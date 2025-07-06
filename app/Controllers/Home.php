@@ -54,33 +54,33 @@ class Home extends BaseController
     }
 
     /**
-     * This is the terms and conditions page
+     * This is the service page
      * @return string
      */
-    public function termsAndConditions(): string
+    public function services(): string
     {
         $locale = service('request')->getLocale();
         $data   = [
-            'slug'   => 'terms-and-conditions',
+            'slug'   => 'services',
             'locale' => $locale,
-            'uri'    => 'terms-and-conditions'
+            'uri'    => 'services'
         ];
-        return view('terms-and-conditions', $data);
+        return view('services', $data);
     }
 
     /**
-     * This is the privacy policy page
+     * This is the product page
      * @return string
      */
-    public function privacyPolicy(): string
+    public function products(): string
     {
         $locale = service('request')->getLocale();
         $data   = [
-            'slug'   => 'privacy-policy',
+            'slug'   => 'products',
             'locale' => $locale,
-            'uri'    => 'privacy-policy'
+            'uri'    => 'products'
         ];
-        return view('privacy-policy', $data);
+        return view('products', $data);
     }
 
     /**

@@ -16,9 +16,9 @@ return [
         'keywords'    => 'Keywords for blog',
         'description' => 'Description for blog',
     ],
-    'terms-and-conditions' => [
-        'keywords'    => 'Keywords for terms-and-conditions',
-        'description' => 'Description for terms-and-conditions',
+    'services' => [
+        'keywords'    => 'Keywords for services',
+        'description' => 'Description for services',
     ],
     'privacy-policy'       => [
         'keywords'    => 'Keywords for privacy-policy',

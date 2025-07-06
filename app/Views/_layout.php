@@ -58,8 +58,10 @@
             <ul>
                 <li><a href="<?= base_url() ?>"><?= lang('Theme.pages.home') ?></a></li>
                 <li><a href="<?= base_url('about-us') ?>"><?= lang('Theme.pages.about-us') ?></a></li>
-                <li><a href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
+                <li><a href="<?= base_url('services') ?>"><?= lang('Theme.pages.services') ?></a></li>
+                <li><a href="<?= base_url('products') ?>"><?= lang('Theme.pages.products') ?></a></li>
                 <li><a href="<?= base_url('blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
+                <li><a href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -88,8 +90,10 @@
                 <ul>
                     <li><a href="<?= base_url() ?>"><?= lang('Theme.pages.home') ?></a></li>
                     <li><a href="<?= base_url('about-us') ?>"><?= lang('Theme.pages.about-us') ?></a></li>
-                    <li><a href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
+                    <li><a href="<?= base_url('services') ?>"><?= lang('Theme.pages.services') ?></a></li>
+                    <li><a href="<?= base_url('products') ?>"><?= lang('Theme.pages.products') ?></a></li>
                     <li><a href="<?= base_url('blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
+                    <li><a href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-6 footer-links"></div>
@@ -98,9 +102,7 @@
     </div>
     <div class="container copyright text-center mt-4">
         <p>
-            &copy; <?= date('Y') ?> | สงวนลิขสิทธิ์ | <?= lang('Theme.company-name') ?> |
-            <a href="<?= base_url('terms-and-conditions') ?>"><?= lang('Theme.pages.terms-and-conditions') ?></a> |
-            <a href="<?= base_url('privacy-policy') ?>"><?= lang('Theme.pages.privacy-policy') ?></a>
+            &copy; <?= date('Y') ?> | สงวนลิขสิทธิ์ | <?= lang('Theme.company-name') ?>
         </p>
     </div>
 </footer>
