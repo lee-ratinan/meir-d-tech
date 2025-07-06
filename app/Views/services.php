@@ -38,12 +38,46 @@ $this->section('content');
                     <div class="col-lg-3 col-md-6 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="<?= ($i+1) * 100 ?>">
                         <div class="service-card position-relative z-1">
                             <div class="service-icon">
-                                <i class="<?= $service[0] ?>"></i>
+                                <i class="<?= $service[0] ?> fa-2x"></i>
                             </div>
                             <h3><?= $service[1] ?></h3>
                             <p><?= $service[2] ?></p>
                         </div>
                     </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <section id="steps" class="steps section">
+        <?php
+        $why = [
+            ['fa-solid fa-screwdriver-wrench', 'ประสบการณ์จริงในภาคสนาม'],
+            ['fa-solid fa-user-tie', 'ให้คำปรึกษาโดยทีมวิศวกรผู้เชี่ยวชาญ'],
+            ['fa-solid fa-stopwatch-20', 'สะดวกและรวดเร็ว ในการประสานงาน'],
+            ['fa-solid fa-tree', 'โซลูชันที่เป็นมิตรต่อสิ่งแวดล้อม'],
+            ['fa-solid fa-list-check', 'สต็อกสินค้าและอะไหล่พร้อมส่ง'],
+            ['fa-solid fa-hand-holding-heart', 'บริการหลังการขายที่ใส่ใจเสมอ']
+        ];
+        ?>
+        <!-- Section Title -->
+        <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+            <h1><?= lang('Theme.website-name') ?></h1>
+            <h2>ทำไมต้องเลือก Meir D-Tech?</h2>
+        </div><!-- End Section Title -->
+        <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="steps-wrapper">
+                <?php foreach ($why as $i => $item) : ?>
+                    <div class="step-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="<?= ($i+1)*200 ?>">
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="<?= $item[0] ?> fa-2x"></i>
+                            </div>
+                            <div class="step-info">
+                                <span class="step-number"><i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i> <?= ($i+1) ?></span>
+                                <h3><?= $item[1] ?></h3>
+                            </div>
+                        </div>
+                    </div><!-- End Step Item -->
                 <?php endforeach; ?>
             </div>
         </div>
