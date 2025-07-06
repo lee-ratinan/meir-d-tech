@@ -81,6 +81,14 @@ $this->section('content');
                 <?php endforeach; ?>
             </div>
         </div>
+        <div class="container">
+            <div class="row my-5 py-5">
+                <div class="col text-center">
+                    <i class="fa-solid fa-quote-left fa-2x"></i>
+                    <h3 class="my-5">เราคือพาร์ทเนอร์ที่คุณวางใจได้ในระบบน้ำและอุตสาหกรรม</h3>
+                </div>
+            </div>
+        </div>
     </section>
 <?php
 $this->endSection();
