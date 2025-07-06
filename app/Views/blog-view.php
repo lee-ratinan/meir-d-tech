@@ -11,7 +11,7 @@ $this->section('content');
                         <h1><?= lang('Theme.website-name') ?></h1>
                         <h2><?= $post['title'] ?></h2>
                     </div><!-- End Section Title -->
-                    <p><a href="<?= base_url($locale . '/blog') ?>"><?= lang('Theme.pages.blog') ?></a> / <?= $post['title'] ?> /</p>
+                    <p><a href="<?= base_url('blog') ?>"><?= lang('Theme.pages.blog') ?></a> / <?= $post['title'] ?> /</p>
                     <?php if (!empty($post['media'])) : ?>
                         <img src="<?= $post['media']['media_details']['sizes']['full']['source_url'] ?>" alt="<?= $post['title'] ?>" class="img-fluid" />
                     <?php endif; ?>
@@ -21,7 +21,7 @@ $this->section('content');
                         <?php if (!empty($post['post_data']['tags'])) : ?>
                             | <?= lang('Blog.tags') ?>
                             <?php foreach ($post['tags'] as $tag_data) : ?>
-                                <a href="<?= base_url($locale . '/blog?tag=' . $tag_data['id']) ?>" class="badge bg-warning"><?= $tag_data['name'] ?></a>
+                                <a href="<?= base_url('blog?tag=' . $tag_data['id']) ?>" class="badge bg-warning"><?= $tag_data['name'] ?></a>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </p>

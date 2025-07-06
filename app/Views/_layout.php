@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?= $locale ?>">
+<html lang="th">
 <head>
     <?php
     $meta_title   = ('blog-view' == $slug ? $title : lang('Theme.pages.' . $slug)) . ' | ' . lang('Theme.website-name');
@@ -50,16 +50,16 @@
 <body>
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-        <a href="<?= base_url($locale) ?>" class="logo d-flex align-items-center me-auto me-xl-0">
+        <a href="<?= base_url() ?>" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- <img src="<?= base_url('/img/logo.webp') ?>" alt="<?= lang('Theme.website-name') ?>"> -->
             <h1 class="sitename"><?= lang('Theme.website-name') ?></h1>
         </a>
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="<?= base_url($locale) ?>"><?= lang('Theme.pages.home') ?></a></li>
-                <li><a href="<?= base_url($locale . '/about-us') ?>"><?= lang('Theme.pages.about-us') ?></a></li>
-                <li><a href="<?= base_url($locale . '/contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
-                <li><a href="<?= base_url($locale . '/blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
+                <li><a href="<?= base_url() ?>"><?= lang('Theme.pages.home') ?></a></li>
+                <li><a href="<?= base_url('about-us') ?>"><?= lang('Theme.pages.about-us') ?></a></li>
+                <li><a href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
+                <li><a href="<?= base_url('blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -72,7 +72,7 @@
     <div class="container footer-top">
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
-                <a href="<?= base_url($locale) ?>" class="logo d-flex align-items-center">
+                <a href="<?= base_url() ?>" class="logo d-flex align-items-center">
                     <span class="sitename"><?= lang('Theme.website-name') ?></span>
                 </a>
                 <p><?= lang('Theme.footer-paragraph') ?></p>
@@ -86,10 +86,10 @@
             <div class="col-lg-2 col-6 footer-links">
                 <h4><?= lang('Theme.footer-links') ?></h4>
                 <ul>
-                    <li><a href="<?= base_url($locale) ?>"><?= lang('Theme.pages.home') ?></a></li>
-                    <li><a href="<?= base_url($locale . '/about-us') ?>"><?= lang('Theme.pages.about-us') ?></a></li>
-                    <li><a href="<?= base_url($locale . '/contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
-                    <li><a href="<?= base_url($locale . '/blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
+                    <li><a href="<?= base_url() ?>"><?= lang('Theme.pages.home') ?></a></li>
+                    <li><a href="<?= base_url('about-us') ?>"><?= lang('Theme.pages.about-us') ?></a></li>
+                    <li><a href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
+                    <li><a href="<?= base_url('blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-6 footer-links"></div>
@@ -99,8 +99,8 @@
     <div class="container copyright text-center mt-4">
         <p>
             &copy; <?= date('Y') ?> | สงวนลิขสิทธิ์ | <?= lang('Theme.company-name') ?> |
-            <a href="<?= base_url($locale . '/terms-and-conditions') ?>"><?= lang('Theme.pages.terms-and-conditions') ?></a> |
-            <a href="<?= base_url($locale . '/privacy-policy') ?>"><?= lang('Theme.pages.privacy-policy') ?></a>
+            <a href="<?= base_url('terms-and-conditions') ?>"><?= lang('Theme.pages.terms-and-conditions') ?></a> |
+            <a href="<?= base_url('privacy-policy') ?>"><?= lang('Theme.pages.privacy-policy') ?></a>
         </p>
     </div>
 </footer>
