@@ -63,11 +63,6 @@
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-        <?php if ('en' == $locale) : ?>
-        <a class="btn-getstarted" href="<?= base_url('th/' . $uri) ?>">ภาษาไทย</a>
-        <?php else: ?>
-        <a class="btn-getstarted" href="<?= base_url('en/' . $uri) ?>">English</a>
-        <?php endif; ?>
     </div>
 </header>
 <main class="main">
@@ -103,7 +98,7 @@
     </div>
     <div class="container copyright text-center mt-4">
         <p>
-            &copy; <?= date('Y') ?> | All Rights Reserved | <?= lang('Theme.company-name') ?> |
+            &copy; <?= date('Y') ?> | สงวนลิขสิทธิ์ | <?= lang('Theme.company-name') ?> |
             <a href="<?= base_url($locale . '/terms-and-conditions') ?>"><?= lang('Theme.pages.terms-and-conditions') ?></a> |
             <a href="<?= base_url($locale . '/privacy-policy') ?>"><?= lang('Theme.pages.privacy-policy') ?></a>
         </p>
