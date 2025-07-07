@@ -8,17 +8,52 @@ use Config\Services;
 class Home extends BaseController
 {
 
+    private $product_categories_slugs = [
+        'filter'                      => 'กรอง',
+        'control-valve'               => 'ชุดควบคุมวาล์ว',
+        'air-tank'                    => 'ถังพักลม',
+        'water-tank'                  => 'ถังเก็บน้ำ',
+        'pressure-tank'               => 'ถังแรงดัน',
+        'pneumatic'                   => 'นิวเมติก',
+        'pump'                        => 'ปั๊ม',
+        'air-compressor'              => 'ปั๊มลม',
+        'screw-compressor'            => 'ปั๊มลมสกรู',
+        'booster-pump'                => 'ปั๊มแรงดัน',
+        'electric-motor'              => 'มอเตอร์ไฟฟ้า',
+        'hoist'                       => 'รอก',
+        'valve'                       => 'วาล์ว',
+        'actuator'                    => 'หัวขับวาล์ว',
+        'electric-appliance'          => 'อุปกรณ์ไฟฟ้าโรงงาน',
+        'diesel-generator-set'        => 'เครื่องกำเนิดไฟฟ้า',
+        'air-dryer'                   => 'เครื่องทำลมแห้ง',
+        'tools'                       => 'เครื่องมือช่าง',
+        'process-instrument'          => 'เครื่องมือวัด',
+        'roots-blower-n-turbo-blower' => 'เครื่องเติมอากาศ',
+        'sludge-separator'            => 'เครื่องแยกกากตะกอน',
+        'insect-trap-light'           => 'เครื่องไฟดักแมลง',
+        'reverse-osmosis-membrane'    => 'เมมเบรนกรองน้ำอุตสาหกรรม',
+        'solar-cell'                  => 'โซล่าร์เซล',
+        'blower'                      => 'โบลเวอร์',
+        'mixer-agitator'              => 'ใบกวน'
+    ];
+
     /**
      * This is the homepage
      * @return string
      */
     public function index(): string
     {
-        $locale = service('request')->getLocale();
-        $data   = [
-            'slug'   => 'home',
-            'locale' => $locale,
-            'uri'    => ''
+        helper('wordpress');
+        $locale     = service('request')->getLocale();
+        $limit      = 10;
+        $blog_url   = getenv('WORDPRESS_URL');
+        $parent_id  = getenv('WORDPRESS_PRODUCT_CATEGORY_PARENT_ID');
+        $categories = callWordPressCurl($blog_url . "categories?parent={$parent_id}&per_page={$limit}&orderby=name");
+        $data       = [
+            'slug'       => 'home',
+            'locale'     => $locale,
+            'uri'        => '',
+            'categories' => $categories['body']
         ];
         return view('home', $data);
     }
@@ -74,11 +109,17 @@ class Home extends BaseController
      */
     public function products(): string
     {
-        $locale = service('request')->getLocale();
-        $data   = [
-            'slug'   => 'products',
-            'locale' => $locale,
-            'uri'    => 'products'
+        helper('wordpress');
+        $locale     = service('request')->getLocale();
+        $limit      = count($this->product_categories_slugs);
+        $blog_url   = getenv('WORDPRESS_URL');
+        $parent_id  = getenv('WORDPRESS_PRODUCT_CATEGORY_PARENT_ID');
+        $categories = callWordPressCurl($blog_url . "categories?parent={$parent_id}&per_page={$limit}&orderby=name");
+        $data       = [
+            'slug'       => 'products',
+            'locale'     => $locale,
+            'uri'        => 'products',
+            'categories' => $categories['body'],
         ];
         return view('products', $data);
     }
