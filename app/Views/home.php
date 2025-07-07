@@ -28,7 +28,7 @@ $this->section('content');
                 <div class="col-lg-5 aos-init aos-animate" data-aos="zoom-out">
                     <div class="visual-content">
                         <div class="fluid-shape">
-                            <img src="<?= base_url('img/hero-img.png') ?>" alt="สินค้าอุตสาหกรรม" class="fluid-img">
+                            <img src="<?= base_url('img/hero-img.png') ?>" alt="สินค้าอุตสาหกรรม" class="fluid-img rounded-5">
                         </div>
                     </div>
                 </div>
