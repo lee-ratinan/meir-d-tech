@@ -56,12 +56,12 @@
         </a>
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="<?= base_url() ?>"><?= lang('Theme.pages.home') ?></a></li>
-                <li><a href="<?= base_url('about-us') ?>"><?= lang('Theme.pages.about-us') ?></a></li>
-                <li><a href="<?= base_url('services') ?>"><?= lang('Theme.pages.services') ?></a></li>
-                <li><a href="<?= base_url('products') ?>"><?= lang('Theme.pages.products') ?></a></li>
-                <li><a href="<?= base_url('blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
-                <li><a href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
+                <li><a <?= ('home' == $slug ? 'class="active"' : '') ?> href="<?= base_url() ?>"><?= lang('Theme.pages.home') ?></a></li>
+                <li><a <?= ('about-us' == $slug ? 'class="active"' : '') ?> href="<?= base_url('about-us') ?>"><?= lang('Theme.pages.about-us') ?></a></li>
+                <li><a <?= ('services' == $slug ? 'class="active"' : '') ?> href="<?= base_url('services') ?>"><?= lang('Theme.pages.services') ?></a></li>
+                <li><a <?= ('products' == $slug ? 'class="active"' : '') ?> href="<?= base_url('products') ?>"><?= lang('Theme.pages.products') ?></a></li>
+                <li><a <?= ('blog' == $slug ? 'class="active"' : '') ?> href="<?= base_url('blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
+                <li><a <?= ('contact-us' == $slug ? 'class="active"' : '') ?> href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
