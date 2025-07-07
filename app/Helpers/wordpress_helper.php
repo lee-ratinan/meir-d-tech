@@ -148,9 +148,10 @@ function retrieveWordPressPosts($url_part): array
 
 /**
  * @param string $slug
+ * @param string $mode
  * @return array
  */
-function generateWordPressPage(string $slug): array
+function generateWordPressPage(string $slug, string $mode = 'blog'): array
 {
     $slug      = strtolower($slug);
     $url       = getenv('WORDPRESS_URL') . 'posts/?slug=' . $slug;
@@ -159,28 +160,40 @@ function generateWordPressPage(string $slug): array
     if (!$post_data) {
         throw new PageNotFoundException('Cannot find the post with code ' . $slug);
     }
-    $media     = [];
-    $tags      = [];
+    $media      = [];
+    $tags       = [];
+    $author     = [];
+    $categories = [];
     if (!empty($post_data['featured_media']) && 0 < $post_data['featured_media']) {
         $media = callWordPressCurl(getenv('WORDPRESS_URL') . 'media/' . $post_data['featured_media']);
         $media = $media['body'] ?? [];
     }
-    if (!empty($post_data['tags'])) {
-        $tag_ids = implode(',', $post_data['tags']);
-        $tags    = callWordPressCurl(getenv('WORDPRESS_URL') . 'tags/?per_page=' . count($post_data['tags']) . '&include=' . $tag_ids);
-        $tags    = $tags['body'] ?? [];
+    if ('product' == $mode) {
+        // category
+        if (!empty($post_data['categories'])) {
+            $category_str = implode(',', $post_data['categories']);
+            $categories   = callWordPressCurl(getenv('WORDPRESS_URL') . 'categories?include=' . $category_str);
+            $categories   = $categories['body'] ?? [];
+        }
+    } else {
+        if (!empty($post_data['tags'])) {
+            $tag_ids = implode(',', $post_data['tags']);
+            $tags    = callWordPressCurl(getenv('WORDPRESS_URL') . 'tags/?per_page=' . count($post_data['tags']) . '&include=' . $tag_ids);
+            $tags    = $tags['body'] ?? [];
+        }
+        // AUTHOR
+        $author_id = $post_data['author'];
+        $author    = callWordPressCurl(getenv('WORDPRESS_URL') . 'users/' . $author_id);
+        $author    = $author['body'] ?? [];
     }
-    // AUTHOR
-    $author_id = $post_data['author'];
-    $author    = callWordPressCurl(getenv('WORDPRESS_URL') . 'users/' . $author_id);
-    $author    = $author['body'] ?? [];
     return [
         'navbar_class'     => 'position-absolute bg-light',
         'title'            => $post_data['title']['rendered'],
         'post_data'        => $post_data,
-        'media'             => $media,
+        'media'            => $media,
         'tags'             => $tags,
         'author'           => $author,
+        'categories'       => $categories,
     ];
 }
 

@@ -136,19 +136,44 @@ class Home extends BaseController
         }
         $category_id = $category['body'][0]['id'];
         $page         = $this->request->getVar('p');
+        $query        = $this->request->getVar('q') ?? '';
         $page         = (empty($page)) ? 1 : $page;
+        $query_string = '';
+        if (!empty($query)) {
+            $query_string = '&search=' . $query;
+        }
         $limit        = getenv('WORDPRESS_PAGE_LIMIT');
-        $products     = retrieveWordPressPosts("posts?page={$page}&per_page={$limit}&categories={$category_id}");
+        $products     = retrieveWordPressPosts("posts?page={$page}&per_page={$limit}&categories={$category_id}{$query_string}");
         $data = [
-            'slug'        => 'products',
-            'locale'      => $locale,
-            'title'       => $category['body'][0]['name'],
-            'category'    => $category['body'],
-            'category_id' => $category_id,
-            'products'    => $products,
-            'page'        => $page,
+            'slug'          => 'products',
+            'locale'        => $locale,
+            'title'         => $category['body'][0]['name'],
+            'category'      => $category['body'],
+            'category_id'   => $category_id,
+            'category_slug' => $category_slug,
+            'products'      => $products,
+            'page'          => $page,
+            'query'         => $query,
         ];
         return view('product-category', $data);
+    }
+
+    /**
+     * @param string $product_slug
+     * @return string
+     */
+    public function productView(string $product_slug): string
+    {
+        helper('wordpress');
+        $locale  = service('request')->getLocale();
+        $product = generateWordPressPage($product_slug, 'product');
+        $data    = [
+            'slug'    => 'products',
+            'locale'  => $locale,
+            'product' => $product,
+            'title'   => $product['title']
+        ];
+        return view('product-view', $data);
     }
 
     /**
@@ -200,7 +225,7 @@ class Home extends BaseController
         $locale = service('request')->getLocale();
         $post   = generateWordPressPage($blog_slug);
         $data   = [
-            'slug'   => 'blog-view',
+            'slug'   => 'blog',
             'locale' => $locale,
             'post'   => $post,
             'title'  => $post['title']

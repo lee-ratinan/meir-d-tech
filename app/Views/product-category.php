@@ -11,8 +11,23 @@ $this->section('content');
         </div><!-- End Section Title -->
         <div class="container">
             <div class="row mb-3">
+                <div class="d-none d-md-block col-md-6 col-lg-8">&nbsp;</div>
+                <div class="col-md-6 col-lg-4">
+                    <form method="get">
+                        <label for="q" class="d-none"><?= lang('Blog.buttons.search') ?></label>
+                        <div class="input-group">
+                            <input class="form-control" id="q" name="q" placeholder="<?= lang('Blog.buttons.search') ?>" required />
+                            <button class="btn btn-primary" type="submit"><?= lang('Blog.buttons.search') ?></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mb-3">
                 <div class="col-12 col-md-10 col-lg-8">
                     แสดงหน้าที่ <?= $page ?> จาก <?= $products['total_pages'] ?> หน้า | สินค้าทั้งหมด: <?= $products['total_posts'] ?>
+                    <?php if (!empty($query)) : ?>
+                        <br>แสดงผลการค้นหาคำว่า: <?= $query ?> | <a href="<?= base_url('products/category/' . $category_slug) ?>"><?= lang('Blog.buttons.clear') ?></a>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="row">
