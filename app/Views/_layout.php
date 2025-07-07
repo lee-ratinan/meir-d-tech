@@ -22,10 +22,6 @@
     <!-- Favicons -->
     <link href="<?= $favicon_file ?>" rel="icon">
     <link href="<?= $favicon_file ?>" rel="apple-touch-icon">
-    <!-- Link Languages -->
-    <link rel="alternate" hreflang="en" href="<?= base_url('en/' . $uri) ?>">
-    <link rel="alternate" hreflang="th" href="<?= base_url('th/' . $uri) ?>">
-    <link rel="alternate" hreflang="x-default" href="<?= base_url($uri) ?>">
     <link rel="canonical" href="<?= current_url() ?>">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

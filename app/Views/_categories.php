@@ -1,12 +1,12 @@
-<section id="portfolio" class="portfolio section">
+<section id="portfolio" class="portfolio section" style="margin-top: 100px">
     <!-- Section Title -->
     <div class="container section-title aos-init aos-animate" data-aos="fade-up">
         <h1><?= lang('Theme.website-name') ?></h1>
         <h2><?= lang('Theme.pages.' . $slug) ?></h2>
     </div><!-- End Section Title -->
-    <div class="container-fluid aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-            <ul class="portfolio-filters isotope-filters aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <ul class="portfolio-filters isotope-filters aos-init aos-animate d-none" data-aos="fade-up" data-aos-delay="200">
                 <li data-filter="*" class="filter-active">
                     <i class="bi bi-grid-3x3"></i> ประเภทสินค้าทั้งหมด
                 </li>
@@ -21,10 +21,7 @@
                                 <div class="overlay-content">
                                     <h3 class="entry-title"><?= $category['name'] ?></h3>
                                     <div class="entry-links">
-<!--                                        <a href="--><?php //= base_url('img/product-categories/' . $category['slug'] . '.png') ?><!--" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="--><?php //= $category['name'] ?><!--">-->
-<!--                                            <i class="bi bi-arrows-angle-expand"></i>-->
-<!--                                        </a>-->
-                                        <a href="<?= base_url() ?>">
+                                        <a href="<?= base_url('products/category/' .  $category['slug']) ?>">
                                             <i class="bi bi-arrow-right"></i>
                                         </a>
                                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\HTTP\ResponseInterface;
 use Config\Services;
 
@@ -52,7 +53,6 @@ class Home extends BaseController
         $data       = [
             'slug'       => 'home',
             'locale'     => $locale,
-            'uri'        => '',
             'categories' => $categories['body']
         ];
         return view('home', $data);
@@ -67,8 +67,7 @@ class Home extends BaseController
         $locale = service('request')->getLocale();
         $data   = [
             'slug'   => 'about-us',
-            'locale' => $locale,
-            'uri'    => 'about-us'
+            'locale' => $locale
         ];
         return view('about-us', $data);
     }
@@ -82,8 +81,7 @@ class Home extends BaseController
         $locale = service('request')->getLocale();
         $data   = [
             'slug'   => 'contact-us',
-            'locale' => $locale,
-            'uri'    => 'contact-us'
+            'locale' => $locale
         ];
         return view('contact-us', $data);
     }
@@ -97,8 +95,7 @@ class Home extends BaseController
         $locale = service('request')->getLocale();
         $data   = [
             'slug'   => 'services',
-            'locale' => $locale,
-            'uri'    => 'services'
+            'locale' => $locale
         ];
         return view('services', $data);
     }
@@ -118,10 +115,40 @@ class Home extends BaseController
         $data       = [
             'slug'       => 'products',
             'locale'     => $locale,
-            'uri'        => 'products',
             'categories' => $categories['body'],
         ];
         return view('products', $data);
+    }
+
+    /**
+     * View products in category
+     * @param string $category_slug
+     * @return string
+     */
+    public function productsByCategory(string $category_slug): string
+    {
+        helper('wordpress');
+        $locale     = service('request')->getLocale();
+        $blog_url   = getenv('WORDPRESS_URL');
+        $category   = callWordPressCurl($blog_url . "categories?slug=" . $category_slug);
+        if (empty($category['body'])) {
+            throw PageNotFoundException::forPageNotFound();
+        }
+        $category_id = $category['body'][0]['id'];
+        $page         = $this->request->getVar('p');
+        $page         = (empty($page)) ? 1 : $page;
+        $limit        = getenv('WORDPRESS_PAGE_LIMIT');
+        $products     = retrieveWordPressPosts("posts?page={$page}&per_page={$limit}&categories={$category_id}");
+        $data = [
+            'slug'        => 'products',
+            'locale'      => $locale,
+            'title'       => $category['body'][0]['name'],
+            'category'    => $category['body'],
+            'category_id' => $category_id,
+            'products'    => $products,
+            'page'        => $page,
+        ];
+        return view('product-category', $data);
     }
 
     /**
@@ -150,14 +177,10 @@ class Home extends BaseController
             $term         = $tag;
         }
         $category_id = getenv('WORDPRESS_LOCALE_TH');
-        if ('en' == $locale) {
-            $category_id = getenv('WORDPRESS_LOCALE_EN');
-        }
         $posts  = retrieveWordPressPosts("posts?page={$page}&per_page={$limit}&categories={$category_id}{$query_string}");
         $data   = [
             'slug'   => 'blog',
             'locale' => $locale,
-            'uri'    => 'blog',
             'posts'  => $posts,
             'mode'   => $mode,
             'term'   => $term,
@@ -179,7 +202,6 @@ class Home extends BaseController
         $data   = [
             'slug'   => 'blog-view',
             'locale' => $locale,
-            'uri'    => 'blog/view/' . $blog_slug,
             'post'   => $post,
             'title'  => $post['title']
         ];
