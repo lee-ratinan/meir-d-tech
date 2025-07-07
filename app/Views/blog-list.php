@@ -80,13 +80,13 @@ $this->section('content');
                     <?php if (1 == $page) : ?>
                         <?= lang('Blog.buttons.previous') ?>
                     <?php else : ?>
-                        <a href="?<?= $filter ?>&p=<?= $page - 1 ?>"><?= lang('Blog.buttons.previous') ?></a>
+                        <a href="?<?= $filter ?>&p=<?= $page - 1 ?>"><i class="fa-solid fa-caret-left"></i> <?= lang('Blog.buttons.previous') ?></a>
                     <?php endif; ?>
                     <!-- CURRENT PAGE -->
                     | <?= lang('Blog.page', [$page]) ?> |
                     <!-- NEXT -->
                     <?php if ($posts['total_pages'] >= $page + 1) : ?>
-                        <a href="?<?= $filter ?>&p=<?= $page + 1 ?>"><?= lang('Blog.buttons.next') ?></a>
+                        <a href="?<?= $filter ?>&p=<?= $page + 1 ?>"><?= lang('Blog.buttons.next') ?> <i class="fa-solid fa-caret-right"></i></a>
                     <?php else: ?>
                         <?= lang('Blog.buttons.next') ?>
                     <?php endif; ?>
