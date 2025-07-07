@@ -9,13 +9,34 @@ $this->section('content');
             <h2><?= lang('Theme.pages.' . $slug) ?></h2>
         </div><!-- End Section Title -->
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquam sem eget enim dignissim, at ornare nisi facilisis. Praesent orci urna, mattis hendrerit lacus at, posuere mattis augue. Donec eget eros blandit, tincidunt sapien volutpat, pretium orci. In interdum lacus libero, ut condimentum nisl efficitur ut. Curabitur hendrerit leo efficitur erat mollis, at sagittis lorem dictum. Vivamus condimentum fringilla mauris, eu aliquam justo placerat eget. Praesent vitae arcu at urna aliquam elementum a nec metus. In eget bibendum magna. Pellentesque faucibus justo eget neque porta, quis mattis libero pellentesque. Pellentesque vitae magna risus. In non gravida augue. Nunc in diam ex.</p>
-                    <p>In egestas sit amet libero ut iaculis. Sed lorem ipsum, pellentesque suscipit lacus ac, sodales luctus justo. Vivamus venenatis facilisis ante at mollis. Integer condimentum lorem eget enim maximus, vitae convallis mi scelerisque. Cras nec justo pharetra, elementum metus nec, ullamcorper velit. In vel ante neque. Nulla tristique rhoncus auctor.</p>
-                    <p>Ut porta, quam nec feugiat pretium, lorem odio pulvinar ipsum, non eleifend nisl nunc eu est. Pellentesque vulputate suscipit cursus. Quisque mattis vehicula dui, eu gravida purus. Aliquam eu dolor massa. Mauris in pellentesque augue, sed finibus ante. Nullam semper scelerisque ipsum, ornare accumsan nulla dapibus in. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                    <p>Aliquam odio quam, aliquam et arcu pretium, ultrices condimentum lectus. Nam eu magna condimentum justo efficitur finibus. In hac habitasse platea dictumst. Quisque pulvinar congue arcu quis hendrerit. Sed gravida lectus eros, sed ullamcorper neque molestie a. Duis dapibus diam turpis, sit amet iaculis urna tincidunt a. Aliquam vitae cursus felis. In eros tellus, eleifend vel risus vel, euismod accumsan sem. Etiam pulvinar nunc ut eros rhoncus pharetra. Vivamus placerat egestas est at consequat.</p>
-                    <p>Aliquam imperdiet sit amet est sit amet luctus. Morbi commodo lorem arcu. Sed a erat viverra nisl semper dignissim et ac dolor. Nunc ultrices felis id lobortis viverra. Vivamus porttitor diam vitae accumsan ullamcorper. Integer ac efficitur orci. Phasellus posuere, libero non vehicula mattis, urna dolor scelerisque est, id luctus nulla tellus vel turpis. Vivamus tincidunt enim sit amet diam luctus hendrerit. Sed viverra urna vitae pretium ultrices. Donec condimentum ornare tempor. Aenean nec sagittis turpis.</p>
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="200">
+                    <div class="about-image position-relative">
+                        <img src="<?= base_url('img/about-us.png') ?>" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0 aos-init aos-animate" data-aos="fade-left" data-aos-delay="300">
+                    <div class="about-content">
+                        <h3>บริษัท เมียร์ ดี-เทค จำกัด (Meir D-Tech Co., Ltd.)</h3>
+                        <p class="lead">เราคือผู้เชี่ยวชาญด้านโซลูชันสำหรับระบบอุตสาหกรรมครบวงจร ด้วยประสบการณ์และความเชี่ยวชาญเฉพาะทาง บริษัท เมียร์ ดี-เทค จำกัด ดำเนินธุรกิจนำเข้าและจัดจำหน่าย<strong>ปั๊มอุตสาหกรรม</strong>คุณภาพสูงจากต่างประเทศ รวมถึงสินค้าชั้นนำในภาคอุตสาหกรรมหลากหลายประเภท ครอบคลุมหลายแบรนด์ที่ได้รับการยอมรับในระดับสากล</p>
+                        <p>นอกจากการเป็นผู้นำเข้าและผู้จัดจำหน่าย เรายังให้บริการ <strong>ออกแบบ ให้คำปรึกษา และติดตั้งระบบบำบัดน้ำเสียและน้ำดี</strong> สำหรับโรงงานอุตสาหกรรม อาคารพาณิชย์ และโครงการขนาดใหญ่ พร้อมบริการ <strong>PM (Preventive Maintenance)</strong> และดูแลระบบอย่างต่อเนื่องเพื่อให้มั่นใจว่าอุปกรณ์และระบบของลูกค้า ดำเนินงานได้อย่างมีประสิทธิภาพสูงสุด</p>
+                        <div class="row g-4 mt-3">
+                            <div class="col aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <h4>วิสัยทัศน์</h4>
+                                    <p>เป็นผู้นำด้านการจัดหาโซลูชันระบบน้ำและเครื่องจักรอุตสาหกรรมในประเทศไทย ที่ตอบโจทย์ทั้งด้านคุณภาพ ประสิทธิภาพ ความรวดเร็วและความยั่งยืน</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="mt-5">พันธกิจ</h4>
+                        <ul>
+                            <li>คัดสรรสินค้าคุณภาพระดับสากล เพื่อตอบสนองความต้องการของลูกค้าในทุกอุตสาหกรรม</li>
+                            <li>พัฒนาโซลูชันด้านระบบน้ำ และให้บริการหลังการขายที่น่าเชื่อถือ</li>
+                            <li>มุ่งมั่นในความพึงพอใจสูงสุดของลูกค้า พร้อมให้คำปรึกษาเชิงวิศวกรรมที่ตอบโจทย์จริง</li>
+                        </ul>
+                        <a href="<?= base_url('services') ?>" class="btn btn-primary mt-4">รู้จักบริการของเรา</a>
+                    </div>
                 </div>
             </div>
         </div>

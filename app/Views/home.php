@@ -8,7 +8,7 @@ $this->section('content');
                 <div class="col-lg-7 content-col aos-init aos-animate" data-aos="fade-up">
                     <div class="content">
                         <div class="agency-name">
-                            <h5>บริษัทผู้นำ</h5>
+                            <h4>บริษัทผู้นำ</h4>
                         </div>
                         <div class="main-heading">
                             <h1>สินค้าอุตสาหกรรม<br>ครบวงจร</h1>
@@ -28,7 +28,7 @@ $this->section('content');
                 <div class="col-lg-5 aos-init aos-animate" data-aos="zoom-out">
                     <div class="visual-content">
                         <div class="fluid-shape">
-                            <img src="assets/img/abstract/abstract-1.webp" alt="สินค้าอุตสาหกรรม" class="fluid-img">
+                            <img src="<?= base_url('img/hero-img.png') ?>" alt="สินค้าอุตสาหกรรม" class="fluid-img">
                         </div>
                     </div>
                 </div>

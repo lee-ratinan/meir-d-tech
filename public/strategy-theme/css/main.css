@@ -21,8 +21,8 @@
 :root { 
   --background-color: #031119; /* Background color for the entire website, including individual sections */
   --default-color: rgba(255, 255, 255, 0.8); /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #e0e9f2; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #3944bc; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #82EEFD; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #1338BE; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #1b262c; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -67,13 +67,13 @@ body {
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--nav-color);
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: color-mix(in srgb, var(--nav-color), transparent 25%);
   text-decoration: none;
 }
 
