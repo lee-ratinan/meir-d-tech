@@ -48,7 +48,7 @@ $this->section('content');
                                         | <?= lang('Blog.tags') ?>
                                         <?php foreach ($post['tag_ids'] as $tag_id) : ?>
                                             <?php if (isset($posts['tags'][$tag_id])) : ?>
-                                                <a href="<?= base_url('blog?tag=' . $tag_id) ?>" class="badge bg-warning"><?= $posts['tags'][$tag_id] ?></a>
+                                                <a href="<?= base_url('blog?tag=' . $tag_id) ?>" class="badge bg-warning"><?= urldecode($posts['tags'][$tag_id]) ?></a>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     <?php endif; ?>

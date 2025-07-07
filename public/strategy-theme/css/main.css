@@ -25,6 +25,8 @@
   --accent-color: #1338BE; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #1b262c; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --link-color: #82EEFD;
+  --link-hover-color: rgba(130, 238, 253, 0.8);
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -67,13 +69,13 @@ body {
 }
 
 a {
-  color: var(--nav-color);
+  color: var(--link-color);
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--nav-color), transparent 25%);
+  color: var(--link-hover-color);
   text-decoration: none;
 }
 
