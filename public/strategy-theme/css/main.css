@@ -63,7 +63,7 @@
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  font-family: var(--default-font), serif;
 }
 
 a {
@@ -84,7 +84,7 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family: var(--heading-font);
+  font-family: var(--heading-font), sans-serif;
 }
 
 /* PHP Email Form Messages
@@ -245,7 +245,7 @@ h6 {
     color: var(--nav-color);
     padding: 18px 15px;
     font-size: 16px;
-    font-family: var(--nav-font);
+    font-family: var(--nav-font), sans-serif;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -364,7 +364,7 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
-    font-family: var(--nav-font);
+    font-family: var(--nav-font), sans-serif;
     font-size: 17px;
     font-weight: 500;
     display: flex;
@@ -487,12 +487,12 @@ h6 {
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 1px;
-  font-family: var(--heading-font);
+  font-family: var(--heading-font), sans-serif;
 }
 
 .footer .footer-about p {
   font-size: 14px;
-  font-family: var(--heading-font);
+  font-family: var(--heading-font), sans-serif;
 }
 
 .footer .social-links a {
@@ -762,7 +762,7 @@ section,
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: var(--heading-font);
+  font-family: var(--heading-font), sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -1516,10 +1516,10 @@ section,
 
 .steps .step-number {
   display: inline-block;
-  font-family: var(--heading-font);
+  font-family: var(--heading-font), sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--accent-color);
+  color: var(--heading-color);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
