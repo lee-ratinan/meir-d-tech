@@ -2,7 +2,7 @@
     <!-- Section Title -->
     <div class="container section-title aos-init aos-animate" data-aos="fade-up">
         <h1><?= lang('Theme.website-name') ?></h1>
-        <h2><?= lang('Theme.pages.' . $slug) ?></h2>
+        <h2><?= $categories_title ?? lang('Theme.pages.' . $slug) ?></h2>
     </div><!-- End Section Title -->
     <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">

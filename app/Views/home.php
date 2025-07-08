@@ -35,7 +35,10 @@ $this->section('content');
             </div>
         </div>
     </section>
-    <?php include '_categories.php'; ?>
+    <?php
+    $categories_title = 'สินค้าของเรา';
+    include '_categories.php';
+    ?>
 <?php
 $this->endSection();
 ?>

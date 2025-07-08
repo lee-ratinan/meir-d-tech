@@ -46,7 +46,7 @@ class Home extends BaseController
     {
         helper('wordpress');
         $locale     = service('request')->getLocale();
-        $limit      = 10;
+        $limit      = 8;
         $blog_url   = getenv('WORDPRESS_URL');
         $parent_id  = getenv('WORDPRESS_PRODUCT_CATEGORY_PARENT_ID');
         $categories = callWordPressCurl($blog_url . "categories?parent={$parent_id}&per_page={$limit}&orderby=name");
