@@ -28,11 +28,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&family=Noto+Serif+Thai:wght@100..900&display=swap" rel="stylesheet">
     <!-- Vendor CSS Files -->
-    <link href="<?= base_url('/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/vendor/aos/aos.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.1/css/glightbox.min.css" rel="stylesheet">
     <!-- Main CSS File -->
     <link href="<?= base_url('/strategy-theme/css/main.css') ?>" rel="stylesheet">
     <!-- =======================================================
@@ -105,14 +104,14 @@
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 <div id="preloader"></div>
 <!-- Vendor JS Files -->
-<script src="<?= base_url('/vendor/fontawesome6.7.2/all.min.js') ?>"></script>
-<script src="<?= base_url('/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
 <script src="<?= base_url('/vendor/php-email-form/validate.js') ?>"></script>
-<script src="<?= base_url('/vendor/aos/aos.js') ?>"></script>
-<script src="<?= base_url('/vendor/swiper/swiper-bundle.min.js') ?>"></script>
-<script src="<?= base_url('/vendor/glightbox/js/glightbox.min.js') ?>"></script>
-<script src="<?= base_url('/vendor/imagesloaded/imagesloaded.pkgd.min.js') ?>"></script>
-<script src="<?= base_url('/vendor/isotope-layout/isotope.pkgd.min.js') ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.1/js/glightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 <!-- Main JS File -->
 <script src="<?= base_url('/strategy-theme/js/main.js') ?>"></script>
 </body>
