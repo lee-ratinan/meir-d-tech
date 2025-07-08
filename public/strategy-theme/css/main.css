@@ -19,24 +19,24 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #031119; /* Background color for the entire website, including individual sections */
-  --default-color: rgba(255, 255, 255, 0.8); /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #82EEFD; /* Color for headings, subheadings and title throughout the website */
+  --background-color: #f5f5f5; /* Background color for the entire website, including individual sections */
+  --default-color: #121212; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #1338BE; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #1338BE; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #1b262c; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-  --link-color: #82EEFD;
-  --link-hover-color: rgba(130, 238, 253, 0.8);
+  --surface-color: #dddddd; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #000000; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --link-color: #1338BE;
+  --link-hover-color: rgba(19, 56, 190, 0.8);
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: rgba(255, 255, 255, 0.8);  /* The default color of the main navmenu links */
-  --nav-hover-color: #82EEFD; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #29343a; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #29343a; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: rgba(255, 255, 255, 0.8); /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #82EEFD; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: rgba(18, 18, 18, 0.8);  /* The default color of the main navmenu links */
+  --nav-hover-color: #1338BE; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: rgba(245, 245, 245, 0.8); /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: rgba(245, 245, 245, 0.8); /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: rgba(18, 18, 18, 0.8); /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #1338BE; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -1124,8 +1124,8 @@ section,
 }
 
 .about .about-content .btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background-color: #82EEFD;
+  border-color: #82EEFD;
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
   font-weight: 500;
@@ -1133,8 +1133,8 @@ section,
 }
 
 .about .about-content .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), black 10%);
-  border-color: color-mix(in srgb, var(--accent-color), black 10%);
+  background-color: color-mix(in srgb, #82EEFD, black 10%);
+  border-color: color-mix(in srgb, #82EEFD, black 10%);
 }
 
 .about .testimonial-section {
@@ -2709,7 +2709,7 @@ section,
 }
 
 .contact .contact-form-wrapper .btn-submit {
-  background-color: var(--accent-color);
+  background-color: #82EEFD;
   border: none;
   color: var(--contrast-color);
   padding: 12px 30px;
@@ -2718,18 +2718,18 @@ section,
   letter-spacing: 1px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 5px 15px color-mix(in srgb, #82EEFD, transparent 70%);
 }
 
 .contact .contact-form-wrapper .btn-submit:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background-color: color-mix(in srgb, #82EEFD, transparent 15%);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 8px 20px color-mix(in srgb, #82EEFD, transparent 60%);
 }
 
 .contact .contact-form-wrapper .btn-submit:active {
   transform: translateY(0);
-  box-shadow: 0 3px 10px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 3px 10px color-mix(in srgb, #82EEFD, transparent 70%);
 }
 
 .contact .contact-form-wrapper .loading,
