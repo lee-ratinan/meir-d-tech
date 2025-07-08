@@ -8,7 +8,7 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
             <ul class="portfolio-filters isotope-filters aos-init aos-animate d-none" data-aos="fade-up" data-aos-delay="200">
                 <li data-filter="*" class="filter-active">
-                    <i class="bi bi-grid-3x3"></i> ประเภทสินค้าทั้งหมด
+                    <i class="fa-solid fa-border-all"></i> ประเภทสินค้าทั้งหมด
                 </li>
             </ul>
             <div class="row g-4 isotope-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" style="position: relative; height: 545.624px;">
@@ -22,7 +22,7 @@
                                     <h3 class="entry-title"><?= $category['name'] ?></h3>
                                     <div class="entry-links">
                                         <a href="<?= base_url('products/category/' .  $category['slug']) ?>">
-                                            <i class="bi bi-arrow-right"></i>
+                                            <i class="fa-solid fa-circle-right"></i>
                                         </a>
                                     </div>
                                 </div>

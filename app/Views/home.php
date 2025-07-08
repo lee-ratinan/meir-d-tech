@@ -20,7 +20,7 @@ $this->section('content');
                         <div class="cta-button">
                             <a href="<?= base_url('services') ?>" class="btn">
                                 <span>รู้จักบริการของเรา</span>
-                                <i class="bi bi-arrow-right"></i>
+                                <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>

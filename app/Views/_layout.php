@@ -74,10 +74,10 @@
                 </a>
                 <p><?= lang('Theme.footer-paragraph') ?></p>
                 <div class="social-links d-flex mt-4">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-line"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-6 footer-links">
@@ -101,7 +101,7 @@
         </p>
     </div>
 </footer>
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-circle-up"></i></a>
 <div id="preloader"></div>
 <!-- Vendor JS Files -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

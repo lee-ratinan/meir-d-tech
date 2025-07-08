@@ -624,6 +624,7 @@ h6 {
   bottom: -15px;
   z-index: 99999;
   background-color: var(--accent-color);
+  color: var(--surface-color);
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -638,7 +639,7 @@ h6 {
 
 .scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  color: var(--surface-color);
 }
 
 .scroll-top.active {
@@ -2685,7 +2686,7 @@ section,
 
 .contact .contact-form-wrapper .form-group .input-with-icon .form-control {
   border-radius: 8px;
-  padding: 12px 15px 12px 45px;
+  padding: 12px 15px;
   height: 3.5rem;
   color: var(--default-color);
   background-color: var(--surface-color);

@@ -23,7 +23,7 @@ $this->section('content');
                         <div class="row g-4 mt-3">
                             <div class="col aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
                                 <div class="feature-item">
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="fa-solid fa-circle-check fa-2x mb-3"></i>
                                     <h4>วิสัยทัศน์</h4>
                                     <p>เป็นผู้นำด้านการจัดหาโซลูชันระบบน้ำและเครื่องจักรอุตสาหกรรมในประเทศไทย ที่ตอบโจทย์ทั้งด้านคุณภาพ ประสิทธิภาพ ความรวดเร็วและความยั่งยืน</p>
                                 </div>
