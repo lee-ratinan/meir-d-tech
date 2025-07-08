@@ -43,7 +43,7 @@ $this->section('content');
                                 <h2 class="mb-3"><a href="<?= base_url('blog/view/' . $post['slug']) ?>"><?= $post['title'] ?></a></h2>
                                 <p>
                                     <?= lang('Blog.published', [format_post_date($post['date'], $locale)]) ?> |
-                                    <?= lang('Blog.by', [$posts['authors'][$post['author']]]) ?>
+                                    <?= (isset($posts['authors'][$post['author']]) ? lang('Blog.by', [$posts['authors'][$post['author']]]) : '') ?>
                                     <?php if (!empty($post['tag_ids'])) : ?>
                                         | <?= lang('Blog.tags') ?>
                                         <?php foreach ($post['tag_ids'] as $tag_id) : ?>

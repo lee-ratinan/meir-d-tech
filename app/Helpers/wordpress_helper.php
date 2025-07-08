@@ -119,8 +119,10 @@ function retrieveWordPressPosts($url_part): array
         if (!empty($authors)) {
             $response    = callWordPressCurl($blog_url . 'users?include=' . implode(',', $authors));
             $raw_authors = $response['body'];
-            foreach ($raw_authors as $author) {
-                $author_list[$author['id']] = $author['name'];
+            if (!empty($raw_authors)) {
+                foreach ($raw_authors as $author) {
+                    $author_list[$author['id']] = $author['name'];
+                }
             }
         }
     }
