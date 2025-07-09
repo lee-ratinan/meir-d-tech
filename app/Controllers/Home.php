@@ -251,14 +251,16 @@ class Home extends BaseController
      */
     public function sitemap(): ResponseInterface
     {
+        helper('wordpress');
+        $launch_date = '2025-07-12';
         // MAIN PAGES
         $main_pages = [
-            ['/', '2025-01-01', 'monthly', '1.0'],
-            ['/about-us', '2025-01-01', 'monthly', '0.8'],
-            ['/contact-us', '2025-01-01', 'monthly', '0.8'],
-            ['/services', '2025-01-01', 'monthly', '0.8'],
-            ['/blog', '2025-01-01', 'weekly', '0.6'],
-            ['/products', '2025-01-01', 'weekly', '0.7'],
+            ['/', $launch_date, 'monthly', '1.0'],
+            ['/about-us', $launch_date, 'monthly', '0.8'],
+            ['/contact-us', $launch_date, 'monthly', '0.8'],
+            ['/services', $launch_date, 'monthly', '0.8'],
+            ['/blog', $launch_date, 'weekly', '0.6'],
+            ['/products', $launch_date, 'weekly', '0.7'],
         ];
         $xml        = [];
         foreach ($main_pages as $page) {
@@ -273,49 +275,50 @@ class Home extends BaseController
         foreach ($this->product_categories_slugs as $key => $label) {
             $xml[] = [
                 'loc'        => base_url('products/category/' . $key),
-                'lastmod'    => '2025-01-01',
+                'lastmod'    => $launch_date,
                 'changefreq' => 'monthly',
                 'priority'   => '0.7',
             ];
         }
-        // BLOG PAGES + PRODUCTS
+        // GET PRODUCT CATEGORIES' IDs
         $blog_url           = getenv('WORDPRESS_URL');
-        $category_ids       = [
-            getenv('WORDPRESS_LOCALE_TH') => '/blog/view/'
-        ];
-        foreach ($category_ids as $id => $path) {
-            $url    = $blog_url . 'posts?context=embed&per_page=50&categories=' . $id;
-            try {
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-                curl_setopt($ch, CURLOPT_HEADER, true);
-                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-                $response   = curl_exec($ch);
-                $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-                $body       = substr($response, $headerSize);
-                $posts      = json_decode($body, true);
-                foreach ($posts as $post) {
-                    $published = strtotime(substr(@$post['date'], 0, 10));
-                    $age       = (time() - $published) / 86400;
-                    $priority  = 0.5;
-                    if ($age < 180) {
-                        $priority = 0.7;
-                    } elseif ($age < 730) { // 2 years
-                        $priority = 0.6;
-                    }
-                    $xml[]     = [
-                        'loc'        => base_url($path . $post['id']),
-                        'lastmod'    => date('Y-m-d', $published),
-                        'changefreq' => 'monthly',
-                        'priority'   => $priority,
-                    ];
-                }
-                curl_close($ch);
-            } catch (\Exception $e) {
-                continue;
+        $category_id        = getenv('WORDPRESS_PRODUCT_CATEGORY_PARENT_ID');
+        $get_categories_url = $blog_url . 'categories/?parent=' . $category_id . '&per_page=50&context=embed';
+        $all_categories     = callWordPressCurl($get_categories_url);
+        $only_category_ids  = [];
+        foreach ($all_categories['body'] as $category) {
+            $only_category_ids[] = $category['id'];
+        }
+        $string_category_ids = implode(',', $only_category_ids);
+        $get_products_url    = $blog_url . 'posts/?categories=' . $string_category_ids . '&per_page=50&context=embed&orderby=date&order=desc';
+        $newest_products     = callWordPressCurl($get_products_url);
+        foreach ($newest_products['body'] as $product) {
+            $xml[] = [
+                'loc'        => base_url('/products/view/' . $product['slug']),
+                'lastmod'    => substr($product['date'], 0 , 10),
+                'changefreq' => 'weekly',
+                'priority'   => '0.7',
+            ];
+        }
+        // BLOG
+        $blog_category_id   = getenv('WORDPRESS_LOCALE_TH');
+        $get_blog_url       = $blog_url . 'posts?context=embed&per_page=50&order=desc&orderby=date&categories=' . $blog_category_id;
+        $newest_blogs       = callWordPressCurl($get_blog_url);
+        foreach ($newest_blogs['body'] as $blog) {
+            $published = strtotime(substr(@$blog['date'], 0, 10));
+            $age       = (time() - $published) / 86400;
+            $priority  = '0.5';
+            if ($age < 180) {
+                $priority = '0.7';
+            } elseif ($age < 730) { // 2 years
+                $priority = '0.6';
             }
+            $xml[] = [
+                'loc'        => base_url('/blog/view/' . $blog['slug']),
+                'lastmod'    => substr($blog['date'], 0 , 10),
+                'changefreq' => 'weekly',
+                'priority'   => $priority,
+            ];
         }
         $final_xml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">';
         foreach ($xml as $item) {
