@@ -71,8 +71,8 @@ $this->section('content');
                                     <div class="form-group">
                                         <label for="name" class="d-none"><?= lang('Contact.form.name') ?></label>
                                         <div class="input-with-icon">
-                                            <i class="fa-solid fa-user"></i>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="<?= lang('Contact.form.name') ?>" required="">
+                                            <i class="fa-solid fa-user message-icon"></i>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="      <?= lang('Contact.form.name') ?>" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -80,8 +80,8 @@ $this->section('content');
                                     <div class="form-group">
                                         <label for="email" class="d-none"><?= lang('Contact.form.email') ?></label>
                                         <div class="input-with-icon">
-                                            <i class="fa-solid fa-envelope"></i>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="<?= lang('Contact.form.email') ?>" required="">
+                                            <i class="fa-solid fa-envelope message-icon"></i>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="      <?= lang('Contact.form.email') ?>" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -89,28 +89,25 @@ $this->section('content');
                                     <div class="form-group">
                                         <label for="phone" class="d-none"><?= lang('Contact.form.phone') ?></label>
                                         <div class="input-with-icon">
-                                            <i class="fa-solid fa-phone"></i>
-                                            <input type="text" class="form-control" name="phone" id="phone" placeholder="<?= lang('Contact.form.phone') ?>" required="">
+                                            <i class="fa-solid fa-phone message-icon"></i>
+                                            <input type="text" class="form-control" name="phone" id="phone" placeholder="      <?= lang('Contact.form.phone') ?>" required="">
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="message" class="d-none"><?= lang('Contact.form.message') ?></label>
                                         <div class="input-with-icon">
                                             <i class="fa-solid fa-comment-dots message-icon"></i>
-                                            <textarea class="form-control" name="message" id="message" placeholder="<?= lang('Contact.form.message') ?>" style="height: 180px" required=""></textarea>
+                                            <textarea class="form-control" name="message" id="message" placeholder="      <?= lang('Contact.form.message') ?>" style="height: 180px" required=""></textarea>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-12">
                                     <div class="loading">กำลังโหลด</div>
                                     <div class="error-message"><?= lang('Contact.form.responses.error') ?></div>
                                     <div class="sent-message"><?= lang('Contact.form.responses.success') ?></div>
                                 </div>
-
                                 <div class="col-12 text-center">
                                     <button type="submit" class="btn btn-primary btn-submit"><?= lang('Contact.form.send') ?></button>
                                 </div>

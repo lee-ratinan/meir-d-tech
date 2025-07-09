@@ -17,7 +17,7 @@ $this->section('content');
                     <?php endif; ?>
                     <p>
                         <?= lang('Blog.published', [format_post_date($post['post_data']['date'], $locale)]) ?> |
-                        <?= lang('Blog.by', [$post['author']['name']]) ?>
+                        <?= (isset($post['author']['name']) ? lang('Blog.by', [$post['author']['name']]) : '') ?>
                         <?php if (!empty($post['post_data']['tags'])) : ?>
                             | <?= lang('Blog.tags') ?>
                             <?php foreach ($post['tags'] as $tag_data) : ?>
