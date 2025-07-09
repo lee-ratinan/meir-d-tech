@@ -244,31 +244,32 @@ class Home extends BaseController
             ['/', '2025-01-01', 'monthly', '1.0'],
             ['/about-us', '2025-01-01', 'monthly', '0.8'],
             ['/contact-us', '2025-01-01', 'monthly', '0.8'],
+            ['/services', '2025-01-01', 'monthly', '0.8'],
             ['/blog', '2025-01-01', 'weekly', '0.6'],
-            ['/terms-and-conditions', '2025-01-01', 'monthly', '0.5'],
-            ['/privacy-policy', '2025-01-01', 'monthly', '0.5']
-        ];
-        $languages  = [
-            '',
-            '/en',
-            '/th'
+            ['/products', '2025-01-01', 'weekly', '0.7'],
         ];
         $xml        = [];
         foreach ($main_pages as $page) {
-            foreach ($languages as $lang) {
-                $xml[] = [
-                    'loc'        => base_url($lang . $page[0]),
-                    'lastmod'    => $page[1],
-                    'changefreq' => $page[2],
-                    'priority'   => $page[3],
-                ];
-            }
+            $xml[] = [
+                'loc'        => base_url($page[0]),
+                'lastmod'    => $page[1],
+                'changefreq' => $page[2],
+                'priority'   => $page[3],
+            ];
         }
-        // BLOG PAGES
-        $blog_url           = getenv('BLOG_URL');
+        // PRODUCT CATEGORIES
+        foreach ($this->product_categories_slugs as $key => $label) {
+            $xml[] = [
+                'loc'        => base_url('products/category/' . $key),
+                'lastmod'    => '2025-01-01',
+                'changefreq' => 'monthly',
+                'priority'   => '0.7',
+            ];
+        }
+        // BLOG PAGES + PRODUCTS
+        $blog_url           = getenv('WORDPRESS_URL');
         $category_ids       = [
-            getenv('WORDPRESS_LOCALE_EN') => '/en/blog/view/',
-            getenv('WORDPRESS_LOCALE_TH') => '/th/blog/view/'
+            getenv('WORDPRESS_LOCALE_TH') => '/blog/view/'
         ];
         foreach ($category_ids as $id => $path) {
             $url    = $blog_url . 'posts?context=embed&per_page=50&categories=' . $id;
