@@ -56,17 +56,17 @@
                     "logo": "https://meirdtech.com/img/logo.png",
                     "contactPoint": {
                         "@type": "ContactPoint",
-                        "telephone": "+66-#######",
-                        "email": "#######",
+                        "telephone": "<?= $contact_phone_e164 ?>",
+                        "email": "<?= $contact_email ?>",
                         "contactType": "customer service",
                         "areaServed": "TH",
                         "availableLanguage": ["Thai", "English"]
                     },
                     "address": {
                         "@type": "PostalAddress",
-                        "streetAddress": "#######",
-                        "addressLocality": "#######",
-                        "postalCode": "#####",
+                        "streetAddress": "<?= $contact_address ?>",
+                        "addressLocality": "<?= $contact_province ?>",
+                        "postalCode": "<?= $contact_postal_code ?>",
                         "addressCountry": "TH"
                     }
                 }

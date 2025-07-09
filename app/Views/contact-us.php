@@ -8,13 +8,6 @@ $this->section('content');
             <h1><?= lang('Theme.website-name') ?></h1>
             <h2><?= lang('Theme.pages.' . $slug) ?></h2>
         </div><!-- End Section Title -->
-        <?php
-        $email = 'no-reply@example.com';
-        $tel = [
-            '+66 (0) 2 999 9999',
-            '+6629999999'
-        ];
-        ?>
         <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 mb-5">
                 <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
@@ -24,11 +17,10 @@ $this->section('content');
                         </div>
                         <div class="info-content">
                             <h4>ที่อยู่</h4>
-                            <p>123/183 หมู่ที่ 1 ตำบลรังสิต อำเภอธัญบุรี จ.ปทุมธานี 12110</p>
+                            <p><?= $contact_address ?><br><?= $contact_province ?> <?= $contact_postal_code ?></p>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                     <div class="contact-info-box">
                         <div class="icon-box">
@@ -36,8 +28,8 @@ $this->section('content');
                         </div>
                         <div class="info-content">
                             <h4>ข้อมูลติดต่อ</h4>
-                            <p><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
-                            <p><a href="tel:<?= $tel[1] ?>"><?= $tel[0] ?></a></p>
+                            <p><a href="mailto:<?= $contact_email ?>"><?= $contact_email ?></a></p>
+                            <p><a href="tel:<?= $contact_phone_e164 ?>"><?= $contact_phone_number ?></a></p>
                         </div>
                     </div>
                 </div>
