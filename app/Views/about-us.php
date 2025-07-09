@@ -35,7 +35,7 @@ $this->section('content');
                             <li>พัฒนาโซลูชันด้านระบบน้ำ และให้บริการหลังการขายที่น่าเชื่อถือ</li>
                             <li>มุ่งมั่นในความพึงพอใจสูงสุดของลูกค้า พร้อมให้คำปรึกษาเชิงวิศวกรรมที่ตอบโจทย์จริง</li>
                         </ul>
-                        <a href="<?= base_url('services') ?>" class="btn btn-primary mt-4">รู้จักบริการของเรา</a>
+                        <a href="<?= base_url('services') ?>" class="btn btn-primary mt-4">รู้จักบริการของเรา <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

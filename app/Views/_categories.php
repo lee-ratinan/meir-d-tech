@@ -32,6 +32,13 @@
                 </div><!-- End Portfolio Item -->
                 <?php endforeach; ?>
             </div><!-- End Portfolio Container -->
+            <?php if (isset($page) && 'home' == $page) : ?>
+            <div class="row about">
+                <div class="col about-content">
+                    <a href="<?= base_url('products') ?>" class="btn btn-primary mt-4">สินค้าของเรา <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
