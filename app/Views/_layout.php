@@ -3,8 +3,8 @@
 <head>
     <?php
     $meta_title   = ('blog-view' == $slug ? $title : lang('Theme.pages.' . $slug)) . ' | ' . lang('Theme.website-name');
-    $company_logo = 'company-logo.png';
-    $favicon_file = 'favicon.png';
+    $company_logo = base_url('img/logo.png');
+    $favicon_file = base_url('img/favicon.png');
     $meta_image   = ($post['media']['media_details']['sizes']['full']['source_url'] ?? $company_logo);
     ?>
     <meta charset="utf-8">
@@ -47,7 +47,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <a href="<?= base_url() ?>" class="logo d-flex align-items-center me-auto me-xl-0">
-            <!-- <img src="<?= base_url('/img/logo.webp') ?>" alt="<?= lang('Theme.website-name') ?>"> -->
+            <img src="<?= $company_logo ?>" alt="<?= lang('Theme.website-name') ?>">
             <h1 class="sitename"><?= lang('Theme.website-name') ?></h1>
         </a>
         <nav id="navmenu" class="navmenu">
@@ -71,7 +71,7 @@
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
                 <a href="<?= base_url() ?>" class="logo d-flex align-items-center">
-                    <span class="sitename"><?= lang('Theme.website-name') ?></span>
+                    <span class="sitename"><img src="<?= $company_logo ?>" alt="<?= lang('Theme.website-name') ?>" style="height:1em"> <?= lang('Theme.website-name') ?></span>
                 </a>
                 <p><?= lang('Theme.footer-paragraph') ?></p>
                 <div class="social-links d-flex mt-4">
