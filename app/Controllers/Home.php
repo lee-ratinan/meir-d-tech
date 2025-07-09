@@ -326,6 +326,9 @@ class Home extends BaseController
         $from    = $this->request->getPost('email');
         $phone   = $this->request->getPost('phone');
         $message = $this->request->getPost('message');
+        if (empty($name) || empty($from) || empty($phone) || empty($message)) {
+            return lang('Contact.form.responses.error');
+        }
         $to      = getenv('CONTACT_FORM_EMAIL');
         $fr      = getenv('CONTACT_FORM_FROM');
         // Send the email
@@ -334,7 +337,7 @@ class Home extends BaseController
         $email->setFrom($fr);
         $email->setSubject('Contact Form Submission');
         $email->setMessage("Contact Form Submission\n\nName: $name\nEmail: $from\nPhone: $phone\nMessage: $message");
-        if (!$email->send()) {
+        if ($email->send()) {
             return 'OK';
         }
         return lang('Contact.form.responses.error');
