@@ -335,7 +335,6 @@ h6 {
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
-    font-size: 28px;
     line-height: 0;
     margin-right: 10px;
     cursor: pointer;
@@ -438,9 +437,9 @@ h6 {
   .mobile-nav-active .mobile-nav-toggle {
     color: #fff;
     position: absolute;
-    font-size: 32px;
-    top: 15px;
-    right: 15px;
+    font-size: 26px;
+    top: 25px;
+    right: 25px;
     margin-right: 0;
     z-index: 9999;
   }

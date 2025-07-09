@@ -59,7 +59,7 @@
                 <li><a <?= ('blog' == $slug ? 'class="active"' : '') ?> href="<?= base_url('blog') ?>"><?= lang('Theme.pages.blog') ?></a></li>
                 <li><a <?= ('contact-us' == $slug ? 'class="active"' : '') ?> href="<?= base_url('contact-us') ?>"><?= lang('Theme.pages.contact-us') ?></a></li>
             </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            <i class="mobile-nav-toggle d-xl-none fa-solid fa-bars"></i>
         </nav>
     </div>
 </header>
