@@ -2027,9 +2027,13 @@ section,
 
 .portfolio .portfolio-entry .entry-image .entry-overlay .entry-title {
   color: var(--contrast-color);
+  background-color: rgba(245, 245, 245, 0.75);
+  border-radius: 5px;
+  display: inline-block;
   font-size: 24px;
   font-weight: 600;
   margin: 0 0 20px;
+  padding: 5px;
 }
 
 .portfolio .portfolio-entry .entry-image .entry-overlay .entry-links {
