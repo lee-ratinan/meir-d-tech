@@ -145,15 +145,17 @@ class Home extends BaseController
         $limit        = getenv('WORDPRESS_PAGE_LIMIT');
         $products     = retrieveWordPressPosts("posts?page={$page}&per_page={$limit}&categories={$category_id}{$query_string}");
         $data = [
-            'slug'          => 'products',
-            'locale'        => $locale,
-            'title'         => $category['body'][0]['name'],
-            'category'      => $category['body'],
-            'category_id'   => $category_id,
-            'category_slug' => $category_slug,
-            'products'      => $products,
-            'page'          => $page,
-            'query'         => $query,
+            'slug'             => 'products',
+            'locale'           => $locale,
+            'title'            => $category['body'][0]['name'],
+            'category'         => $category['body'],
+            'category_id'      => $category_id,
+            'category_slug'    => $category_slug,
+            'products'         => $products,
+            'page'             => $page,
+            'query'            => $query,
+            'meta_keywords'    => lang('Seo.product_categories.' . $category_slug . '.keywords'),
+            'meta_description' => lang('Seo.product_categories.' . $category_slug . '.description'),
         ];
         return view('product-category', $data);
     }
@@ -165,13 +167,16 @@ class Home extends BaseController
     public function productView(string $product_slug): string
     {
         helper('wordpress');
-        $locale  = service('request')->getLocale();
-        $product = generateWordPressPage($product_slug, 'product');
-        $data    = [
-            'slug'    => 'products',
-            'locale'  => $locale,
-            'product' => $product,
-            'title'   => $product['title']
+        $locale        = service('request')->getLocale();
+        $product       = generateWordPressPage($product_slug, 'product');
+        $category_slug = $product['categories'][0]['slug'];
+        $data          = [
+            'slug'             => 'products',
+            'locale'           => $locale,
+            'product'          => $product,
+            'title'            => $product['title'],
+            'meta_keywords'    => lang('Seo.product_categories.' . $category_slug . '.keywords'),
+            'meta_description' => strip_tags($product['post_data']['excerpt']['rendered']),
         ];
         return view('product-view', $data);
     }
@@ -225,10 +230,11 @@ class Home extends BaseController
         $locale = service('request')->getLocale();
         $post   = generateWordPressPage($blog_slug);
         $data   = [
-            'slug'   => 'blog',
-            'locale' => $locale,
-            'post'   => $post,
-            'title'  => $post['title']
+            'slug'             => 'blog',
+            'locale'           => $locale,
+            'post'             => $post,
+            'title'            => $post['title'],
+            'meta_description' => strip_tags($post['post_data']['excerpt']['rendered'])
         ];
         return view('blog-view', $data);
     }

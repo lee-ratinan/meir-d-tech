@@ -10,12 +10,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $meta_title ?></title>
-    <meta name="description" content="<?= ('blog-view' == $slug ? $title : lang('Seo.' . $slug . '.description')) ?>">
-    <meta name="keywords" content="<?= ('blog-view' == $slug ? $title : lang('Seo.' . $slug . '.keywords')) ?>">
+    <meta name="description" content="<?= ($meta_description ?? lang('Seo.' . $slug . '.description')) ?>">
+    <meta name="keywords" content="<?= ($meta_keywords ?? lang('Seo.' . $slug . '.keywords')) ?>">
     <meta name="author" content="<?= lang('Theme.website-name') ?>">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="<?= $meta_title ?>">
-    <meta property="og:description" content="<?= ('blog-view' == $slug ? $title : lang('Seo.' . $slug . '.description')) ?>">
+    <meta property="og:description" content="<?= ($meta_description ?? lang('Seo.' . $slug . '.description')) ?>">
     <meta property="og:image" content="<?= $meta_image ?>">
     <meta property="og:url" content="<?= current_url() ?>">
     <meta property="og:type" content="<?= (in_array($slug, ['blog-view', 'blog']) ? 'article' : 'website') ?>">
@@ -42,6 +42,37 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    <?php if ('contact-us' == $slug) : ?>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                "name": "ติดต่อเรา - Meir D-Tech",
+                "url": "https://meirdtech.com/contact",
+                "mainEntity": {
+                    "@type": "Organization",
+                    "name": "Meir D-Tech Co., Ltd.",
+                    "url": "https://meirdtech.com",
+                    "logo": "https://meirdtech.com/img/logo.png",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+66-#######",
+                        "email": "#######",
+                        "contactType": "customer service",
+                        "areaServed": "TH",
+                        "availableLanguage": ["Thai", "English"]
+                    },
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "#######",
+                        "addressLocality": "#######",
+                        "postalCode": "#####",
+                        "addressCountry": "TH"
+                    }
+                }
+            }
+        </script>
+    <?php endif; ?>
 </head>
 <body>
 <header id="header" class="header d-flex align-items-center fixed-top">
