@@ -37,7 +37,6 @@ $this->section('content');
     </section>
     <?php
     $categories_title = 'สินค้าของเรา';
-    $page = 'home';
     include '_categories.php';
     ?>
 <?php
