@@ -81,13 +81,7 @@ class Home extends BaseController
         $locale = service('request')->getLocale();
         $data   = [
             'slug'                 => 'contact-us',
-            'locale'               => $locale,
-            'contact_address'      => '123/183 หมู่ที่ 1 ตำบลรังสิต อำเภอธัญบุรี',
-            'contact_province'     => 'จ.ปทุมธานี',
-            'contact_postal_code'  => '12110',
-            'contact_email'        => 'example@meirdtech.com',
-            'contact_phone_e164'   => '+6629999999',
-            'contact_phone_number' => '+66 (0) 2 999 9999'
+            'locale'               => $locale
         ];
         return view('contact-us', $data);
     }

@@ -17,7 +17,7 @@ $this->section('content');
                         </div>
                         <div class="info-content">
                             <h4>ที่อยู่</h4>
-                            <p><?= $contact_address ?><br><?= $contact_province ?> <?= $contact_postal_code ?></p>
+                            <p><?= getenv('CONTACT_ADDRESS') ?><br><?= getenv('CONTACT_PROVINCE') ?> <?= getenv('CONTACT_POSTAL_CODE') ?></p>
                         </div>
                     </div>
                 </div>
@@ -28,8 +28,8 @@ $this->section('content');
                         </div>
                         <div class="info-content">
                             <h4>ข้อมูลติดต่อ</h4>
-                            <p><a href="mailto:<?= $contact_email ?>"><?= $contact_email ?></a></p>
-                            <p><a href="tel:<?= $contact_phone_e164 ?>"><?= $contact_phone_number ?></a></p>
+                            <p><a href="mailto:<?= getenv('CONTACT_EMAIL') ?>"><?= getenv('CONTACT_EMAIL') ?></a></p>
+                            <p><a href="tel:<?= getenv('CONTACT_PHONE_E164') ?>"><?= getenv('CONTACT_PHONE_NUMBER') ?></a></p>
                         </div>
                     </div>
                 </div>
