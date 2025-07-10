@@ -20,7 +20,7 @@ CI_ENVIRONMENT=production
 # APP
 #--------------------------------------------------------------------
 
-app.baseURL='https://meirdtech.com/public/'
+app.baseURL='https://meirdtech.com/'
 WORDPRESS_URL='https://admin.meirdtech.com/wp-json/wp/v2/'
 WORDPRESS_PAGE_LIMIT=10
 WORDPRESS_LOCALE_TH=3
