@@ -14,17 +14,18 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-CI_ENVIRONMENT=development
+CI_ENVIRONMENT=production
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-app.baseURL='http://127.0.0.1:8888/meir-d-tech/public/'
-WORDPRESS_URL='http://127.0.0.1:8888/test-blog/wp-json/wp/v2/'
-WORDPRESS_PAGE_LIMIT=3
-WORDPRESS_LOCALE_TH=2
-WORDPRESS_PRODUCT_CATEGORY_PARENT_ID=6
+app.baseURL='https://meirdtech.com/public/'
+WORDPRESS_URL='https://admin.meirdtech.com/wp-json/wp/v2/'
+WORDPRESS_PAGE_LIMIT=10
+WORDPRESS_LOCALE_TH=3
+WORDPRESS_PRODUCT_CATEGORY_PARENT_ID=4
+
 # If you have trouble with `.`, you could also use `_`.
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
@@ -72,6 +73,19 @@ WORDPRESS_PRODUCT_CATEGORY_PARENT_ID=6
 
 logger.threshold=4
 
+#--------------------------------------------------------------------
+# CONTACT PAGE
+#--------------------------------------------------------------------
 
-CONTACT_FORM_EMAIL=
-CONTACT_FORM_FROM=no-reply@ratinan.com
+# DATA FOR CONTACT PAGE
+CONTACT_ADDRESS='123/183 หมู่ที่ 1 ตำบลรังสิต อำเภอธัญบุรี'
+CONTACT_PROVINCE='จ.ปทุมธานี'
+CONTACT_POSTAL_CODE=12110
+CONTACT_EMAIL=example@meirdtech.com
+CONTACT_PHONE_E164='+6629999999'
+CONTACT_PHONE_NUMBER='+66 (0) 2 999 9999'
+
+# EMAIL THAT MESSAGES FROM CONTACT FORM WILL BE SENT TO
+CONTACT_FORM_EMAIL=example@meirdtech.com
+# EMAIL THAT IS USED AS 'FROM' EMAIL SENT FROM CONTACT FORM
+CONTACT_FORM_FROM=no-reply@meirdtech.com
