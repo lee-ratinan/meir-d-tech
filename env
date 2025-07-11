@@ -14,17 +14,18 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-CI_ENVIRONMENT=development
+CI_ENVIRONMENT=production
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-app.baseURL='http://127.0.0.1:8888/meir-d-tech/public/'
-WORDPRESS_URL='http://127.0.0.1:8888/test-blog/wp-json/wp/v2/'
-WORDPRESS_PAGE_LIMIT=3
-WORDPRESS_LOCALE_TH=2
-WORDPRESS_PRODUCT_CATEGORY_PARENT_ID=6
+app.baseURL='https://meirdtech.com/'
+WORDPRESS_URL='https://admin.meirdtech.com/wp-json/wp/v2/'
+WORDPRESS_PAGE_LIMIT=10
+WORDPRESS_LOCALE_TH=3
+WORDPRESS_PRODUCT_CATEGORY_PARENT_ID=4
+
 # If you have trouble with `.`, you could also use `_`.
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
@@ -72,8 +73,11 @@ WORDPRESS_PRODUCT_CATEGORY_PARENT_ID=6
 
 logger.threshold=4
 
-CONTACT_FORM_EMAIL=sales@meirdtech.com
-CONTACT_FORM_FROM=no-reply@meirdtech.com
+#--------------------------------------------------------------------
+# CONTACT PAGE
+#--------------------------------------------------------------------
+
+# DATA FOR CONTACT PAGE
 CONTACT_ADDRESS='169 หมู่บ้านภูมิภิรมย์ ตำบลรังสิต อำเภอธัญบุรี',
 CONTACT_PROVINCE='จ. ปทุมธานี',
 CONTACT_POSTAL_CODE='12110',
@@ -82,8 +86,13 @@ CONTACT_PHONE_E164='+6628539769',
 CONTACT_PHONE_NUMBER='02 853 9769'
 CONTACT_HOURS_WEEKDAY='8:30น. - 18:00น.'
 CONTACT_HOURS_SATURDAY='8:30น. - 12:00น.'
-SOCIAL_LINE='#'
-SOCIAL_FACEBOOK='1'
-SOCIAL_TWITTER='2'
-SOCIAL_LINKEDIN='3'
-SOCIAL_INSTAGRAM='4'
+SOCIAL_LINE=''
+SOCIAL_FACEBOOK=''
+SOCIAL_TWITTER=''
+SOCIAL_LINKEDIN=''
+SOCIAL_INSTAGRAM=''
+
+# EMAIL THAT MESSAGES FROM CONTACT FORM WILL BE SENT TO
+CONTACT_FORM_EMAIL=example@meirdtech.com
+# EMAIL THAT IS USED AS 'FROM' EMAIL SENT FROM CONTACT FORM
+CONTACT_FORM_FROM=no-reply@meirdtech.com
