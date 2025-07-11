@@ -6,6 +6,13 @@
     $company_logo = base_url('img/logo.png');
     $favicon_file = base_url('img/favicon.png');
     $meta_image   = ($post['media']['media_details']['sizes']['full']['source_url'] ?? $company_logo);
+    function print_social($link, $icon): string
+    {
+        if (!empty($link)) {
+            return '<a href="' . $link . '" target="_blank"><i class="fa-brands ' . $icon . '"></i></a>';
+        }
+        return '';
+    }
     ?>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -74,12 +81,12 @@
         </script>
     <?php endif; ?>
 </head>
-<body>
+<body <?= ('home' == $slug ? 'style="background-image:url(' . base_url('img/home-bg.png') . ');background-size:cover;background-attachment:fixed"' : '') ?>>
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <a href="<?= base_url() ?>" class="logo d-flex align-items-center me-auto me-xl-0">
             <img src="<?= $company_logo ?>" alt="<?= lang('Theme.website-name') ?>">
-            <h1 class="sitename"><?= lang('Theme.website-name') ?></h1>
+            <h1 class="sitename"><?= lang('Theme.website-name') ?><br><small>Meir D-Tech</small></h1>
         </a>
         <nav id="navmenu" class="navmenu">
             <ul>
@@ -105,11 +112,13 @@
                     <span class="sitename"><img src="<?= $company_logo ?>" alt="<?= lang('Theme.website-name') ?>" style="height:1em"> <?= lang('Theme.website-name') ?></span>
                 </a>
                 <p><?= lang('Theme.footer-paragraph') ?></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:<?= getenv('CONTACT_PHONE_E164') ?>"><?= getenv('CONTACT_PHONE_NUMBER') ?></a></p>
                 <div class="social-links d-flex mt-4">
-                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-line"></i></a>
+                    <?= print_social(getenv('SOCIAL_LINE'), 'fa-line') ?>
+                    <?= print_social(getenv('SOCIAL_FACEBOOK'), 'fa-facebook-f') ?>
+                    <?= print_social(getenv('SOCIAL_TWITTER'), 'fa-square-twitter') ?>
+                    <?= print_social(getenv('SOCIAL_LINKEDIN'), 'fa-linkedin') ?>
+                    <?= print_social(getenv('SOCIAL_INSTAGRAM'), 'fa-instagram') ?>
                 </div>
             </div>
             <div class="col-lg-2 col-6 footer-links">

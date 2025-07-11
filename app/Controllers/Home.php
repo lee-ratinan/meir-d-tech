@@ -345,8 +345,8 @@ class Home extends BaseController
         $email   = Services::email();
         $email->setTo($to);
         $email->setFrom($fr);
-        $email->setSubject('Contact Form Submission');
-        $email->setMessage("Contact Form Submission\n\nName: $name\nEmail: $from\nPhone: $phone\nMessage: $message");
+        $email->setSubject('[meirdtech.com] ข้อความจากฟอร์มติดต่อเรา');
+        $email->setMessage("ข้อความจากฟอร์มติดต่อเรา\n\nชื่อ: $name\nEmail: $from\nหมายเลขโทรศัพท์: $phone\nข้อความ: $message");
         if ($email->send()) {
             return 'OK';
         }

@@ -1,4 +1,4 @@
-<section id="portfolio" class="portfolio section" style="margin-top: 100px">
+<section id="portfolio" class="portfolio section" <?= ('home' == $slug ? '' : 'style="margin-top: 100px"') ?>>
     <!-- Section Title -->
     <div class="container section-title aos-init aos-animate" data-aos="fade-up">
         <h1><?= lang('Theme.website-name') ?></h1>

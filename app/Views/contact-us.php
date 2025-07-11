@@ -40,8 +40,8 @@ $this->section('content');
                         </div>
                         <div class="info-content">
                             <h4>เวลาทำการ</h4>
-                            <p>จันทร์-ศุกร์: 9 AM - 6 PM</p>
-                            <p>เสาร์-อาทิตย์ และวันหยุด: 9 AM - 4 PM</p>
+                            <p>จันทร์-ศุกร์: <?= getenv('CONTACT_HOURS_WEEKDAY') ?></p>
+                            <p>เสาร์: <?= getenv('CONTACT_HOURS_SATURDAY') ?></p>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ $this->section('content');
         </div>
         <!-- Google Maps (Full Width) -->
         <div class="map-section aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1738.4347524620994!2d100.70927099083987!3d14.004851932058523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDAwJzE3LjQiTiAxMDDCsDQyJzMzLjMiRQ!5e0!3m2!1sen!2ssg!4v1752243712258!5m2!1sen!2ssg" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <!-- Contact Form Section (Overlapping) -->
         <div class="container form-container-overlap">
@@ -64,7 +64,7 @@ $this->section('content');
                                         <label for="name" class="d-none"><?= lang('Contact.form.name') ?></label>
                                         <div class="input-with-icon">
                                             <i class="fa-solid fa-user message-icon"></i>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="      <?= lang('Contact.form.name') ?>" required="">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="<?= lang('Contact.form.name') ?>" required="" style="text-indent:25px;">
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@ $this->section('content');
                                         <label for="email" class="d-none"><?= lang('Contact.form.email') ?></label>
                                         <div class="input-with-icon">
                                             <i class="fa-solid fa-envelope message-icon"></i>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="      <?= lang('Contact.form.email') ?>" required="">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="<?= lang('Contact.form.email') ?>" required="" style="text-indent:25px;">
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@ $this->section('content');
                                         <label for="phone" class="d-none"><?= lang('Contact.form.phone') ?></label>
                                         <div class="input-with-icon">
                                             <i class="fa-solid fa-phone message-icon"></i>
-                                            <input type="text" class="form-control" name="phone" id="phone" placeholder="      <?= lang('Contact.form.phone') ?>" required="">
+                                            <input type="text" class="form-control" name="phone" id="phone" placeholder="<?= lang('Contact.form.phone') ?>" required="" style="text-indent:25px;">
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@ $this->section('content');
                                         <label for="message" class="d-none"><?= lang('Contact.form.message') ?></label>
                                         <div class="input-with-icon">
                                             <i class="fa-solid fa-comment-dots message-icon"></i>
-                                            <textarea class="form-control" name="message" id="message" placeholder="      <?= lang('Contact.form.message') ?>" style="height: 180px" required=""></textarea>
+                                            <textarea class="form-control" name="message" id="message" placeholder="<?= lang('Contact.form.message') ?>" style="text-indent:25px;height:180px" required=""></textarea>
                                         </div>
                                     </div>
                                 </div>

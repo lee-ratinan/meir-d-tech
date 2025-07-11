@@ -35,6 +35,16 @@ $this->section('content');
             </div>
         </div>
     </section>
+    <section id="brands" class="brands section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">logo-1</div>
+                <div class="col">logo-2</div>
+                <div class="col">logo-3</div>
+                <div class="col">logo-4</div>
+            </div>
+        </div>
+    </section>
     <?php
     $categories_title = 'สินค้าของเรา';
     include '_categories.php';
