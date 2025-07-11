@@ -109,7 +109,7 @@
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
                 <a href="<?= base_url() ?>" class="logo d-flex align-items-center">
-                    <span class="sitename"><img src="<?= $company_logo ?>" alt="<?= lang('Theme.website-name') ?>" style="height:1em"> <?= lang('Theme.website-name') ?></span>
+                    <span class="sitename"><img src="<?= $company_logo ?>" alt="<?= lang('Theme.website-name') ?>" style="height:100%"> <?= lang('Theme.website-name') ?></span>
                 </a>
                 <p><?= lang('Theme.footer-paragraph') ?></p>
                 <p><i class="fa-solid fa-phone"></i> <a href="tel:<?= getenv('CONTACT_PHONE_E164') ?>"><?= getenv('CONTACT_PHONE_NUMBER') ?></a></p>
